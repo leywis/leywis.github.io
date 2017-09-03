@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[flex弹性布局（语法）]]></title>
+    <url>%2F2017%2F08%2F13%2Fflex-learn%2F</url>
+    <content type="text"><![CDATA[flex，也是我们称的弹性盒子布局，也是继流式布局，浮动布局和定位布局之后的第四种布局方式。flex可以轻松的帮助我们解决垂直居中等布局问题。目前flex已经兼容 市面主流浏览器，我们可以安心的使用它。 1.了解flexflex布局中，核心的概念的就是轴和容器。轴又分为主轴和交叉轴，容器有分为父容器和子容器。可以说，所有效果的实现都是基于这四个概念。 当我们为父容器设置display:flex后，我们就可以使用弹性盒子布局。利用为父容器和子容器设置不同的属性来实现各种布局效果。 父容器和子容器分别有六个属性，父容器属性决定了项目的排列方式，而子容器属性则是决定单个项目的排列方式。当两者同时设置的时候，则以子容器属性为准。 注意：当设置上display:flex属性后，子元素的float，clear，vartical-align属性将会失效。 具体可以参考阮一峰的flex教程，分为语法篇和实例篇。 2.父容器属性父容器属性有如下6种： flex-direction flex-wrap flex-flow justify-content align-items align-content 以下分别详细介绍每个属性，记下我自己实验中的每个坑：（顺序按照实现顺序，有些前面的问题会在后面新属性涉及的时候解决） 2.1 flex-direction – 决定主轴方向，即项目排列方向 flex-direction 有4个值： row（默认值）：主轴为水平方向，起点在左端。 row-reverse：主轴为水平方向，起点在右端。 column：主轴为垂直方向，起点在上沿。 column-reverse：主轴为垂直方向，起点在下沿。 当我们为父容器设置上`display:flex`后，我们的元素默认排在一排，当元素数量过多的时候，即使我们为每个子项目设置了固定的`width`，项目也不会超出父容器或者换行，而是被压缩，仍在一行展示。 但是当项目垂直展示的时候就会超出，即子元素的`height`不会弹性。 2.2 flex-wrap – 规定当元素宽度超出父容器的子元素的呈现方式 flex-wrap 有3个值： nowrap（默认）：不换行。这就是为什么2.1中我们碰到的width弹性的原因。 wrap：换行，第一行在上方。 wrap-reverse：换行，第一行在下方。 当加上flex-wrap:wrap的时候，我们会发现换行后，两行并没有并列，而是分开一定间隔。 暂时不知道原因，我们继续往下看。 2.3 flex-flow – 这是一个简写的属性，是flex-direction，flex-wrap的综合写法2.4 justify-content – 规定了项目在主轴上的对齐方式 justify-content 有5个值： flex-start（默认值）：左对齐 flex-end：右对齐 center： 居中 space-between：子容器沿主轴均匀分布，位于首两端的子容器与父容器相切。 space-around：子容器沿主轴均匀分布，位于首尾两端的子容器到父容器的距离是子容器间距的一半。 无论垂直还是水平方向都适用，但是space-between和space-around只有元素未占满一行的时候才生效。当然可以设置padding和margin来实现间隔。 2.5 align-items – 定义项目在交叉轴的排列方式 align-items 有5个值： flex-start：交叉轴的起点对齐。 flex-end：交叉轴的终点对齐。 center： 居中 baseline: 项目的第一行文字的基线对齐。 stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。 注意：最后一个属性是默认，当我们没有给元素设置高度或设置为auto则会占满盒子。 2.6 align-content – 规定了多条轴线的对齐方式，一条则无效。 align-content 有6个值： flex-start：与交叉轴的起点对齐。 flex-end：交叉轴的终点对齐。 center：与交叉轴的中点对齐。 space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。 space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。 stretch（默认值）：轴线占满整个交叉轴。拉伸对齐。 此时，我们看到默认值是stretch的时候，我们就解决了2.2中的问题，当元素换行产生多条轴线后的对齐方式，当我们把对齐方式改为flex-start我们就可以看到我们预想中的效果。 3.子容器属性子容器属性有如下6种： order flex-grow flex-shirnk flex-basis flex align-self 以下分别详细介绍每个属性，需要注意的是子元素的属性会由于父元素的属性： 3.1 order – 定义了项目的排列顺序，默认是0可以是负数 当order的值相同，按dom中顺序排列 这样方便了我们在做项目的时候，如果遇到需求改动，避免了大片的修改html。 3.2 flex-grow – 定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。如果设置为1，则该元素将会占满剩余空间。 如果设置为2，则元素会宽度放大两倍，但是需要注意，元素放大不会导致换行或者超出，最大就是占满一行。 3.3 flex-shirnk – 义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。如果设置为0，则该元素不会缩小。 如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。 3.4 flex-basis – 定义了在分配多余空间之前，项目占据的主轴空间，默认是auto。auto代表了项目本身的宽度所占的空间 我们可以想设置width属性一样设置该属性，其效果类似放大的效果 3.5 flex – flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。3.6 align-self – 设置单个项目的对齐方式允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。 这就是flex的基本知识点，需要理解的就是，flex既然称为弹性盒子布局，那就有必要去淡化width的概念，因为随着各种属性的设置都可能导致盒子弹性伸缩而与我们所设置width属性的值不一样。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>flex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[周末学一点：gulp入门和API简述]]></title>
+    <url>%2F2017%2F08%2F12%2Fgulp-learn%2F</url>
+    <content type="text"><![CDATA[gulp是一种前端代码构建工具，可以帮助我们完成javascript/sass/coffee/less/html/css等文件进行测试、检查、合并、压缩、格式化、浏览器自动刷新、部署文件生成，并监听文件在改动后重复指定的这些步骤。 1.安装gulpgulp是基于node的自动任务运作器，所以我们首先需要安装node，可以去node官网进行下载。安装完成后全局安装gulp。 1$ npm install --global gulp 全局安装后，再把安装到项目依赖中。全局安装是为了可以使用gulp的命令，而安装到项目依赖则是为了方便文件引入。1$ npm install --save-dev gulp 然后在项目根目录下简历gulpfile.js的配置文件。12345var gulp = require("gulp");gulp.task("default",function()&#123; // 此处添加你的默认任务&#125;); 最后，运行gulp任务。1$ gulp 如果要执行单个的任务，只需要输入gulp &lt;task&gt; &lt;othertask&gt;。 2.gulp API gulp借鉴了Unix操作系统中管道（pipe）的思想，前一级的输入，直接在后一级输出。gulp本身只提供了四个简洁的接口，许多功能则是借助插件来实现。 2.1 gulp.task(name[,deps],fn)gulp是基于task来进行的。 name:任务的名称，必填。 deps:该任务的前置任务，也就是该任务的依赖，必须在依赖的任务执行完毕，才会执行本任务。 fn:任务的回调函数。 例如：123gulp.task("defaulttask","depsTask",function()&#123; console.log("this is a Task")&#125;) 2.2 gulp.src(globs[,options])globs 是匹配文件，可以是一个string或者数组，其匹配的规则如下： src/test.js -匹配制定的文件； * -匹配所有文件，例如&quot;src/*.js&quot;表示匹配src目录下所有的js文件； ** -匹配子文件夹，例如&quot;src/**/*.js&quot;表示匹配src所有子目录下中所有的js文件； {} -匹配多个属性，例如&quot;src/{a,b}.js&quot;匹配src目录下的a.js和b.js,src/*.{jpg,png,gif}-表示匹配src下所有的jpg，png，gif的图片文件； ! 排除文件 options可以选参数，有三个默认值，buffer,read,base;其中option.base表示可予以保留的文件路径。 例如： 12345678gulp.src("src/&#123;a,b&#125;/*.js"); // 匹配src中a,b两个子文件夹下的js文件gulp.task("myTask",function()&#123; return gulp.src("./src/**/*.js",&#123;base:"./src/"&#125;) .pipe(uglify()) .pipe(gulp.dest("./build/")) // 此处会把 src/user/a.js 输出到 build/user/a.js&#125;) 2.3 gulp.dest(path[,option])指定处理完后文件输出的路径； path 必填，输出路径。 option 可选参数，Object，有两个属性cwd，mode;都是string类型，cwd在相对路径中用到，而mode指定创建文件夹的权限。 2.4 gulp.watch(globs[,opts],task)，或者 gulp.watch(globs[,opts,cb])监听指定文件的变化，然后执行相关任务 globs 指定监听文件的路径 opts 可选，具体可以参考https://github.com/shama/gaze task 监听到变化的时候执行的任务 cb 可选，类型 function ，每个文件变化执行的回调函数 例如：12345gulp.task('watch-less', function()&#123; gulp.watch('./src/**/*.less',function(event)&#123; console.log('less event'+event.type+' '+event.path) &#125;); &#125;); gulp只需掌握这四个简单的API就够了，剩下的就是要根据我们的项目需要，配合插件来实现我们的项目工程化。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>gulp</tag>
+        <tag>前端工程化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[剪彩：A new beginning]]></title>
+    <url>%2F2017%2F08%2F05%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
