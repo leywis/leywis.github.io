@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://leywis.github.io/"/>
-  <updated>2017-08-13T04:45:25.586Z</updated>
+  <updated>2017-09-10T12:14:27.536Z</updated>
   <id>http://leywis.github.io/</id>
   
   <author>
@@ -14,6 +14,98 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Tips:关于iphone手机上click事件触发不了的Bug</title>
+    <link href="http://leywis.github.io/2017/09/10/clicknouse/"/>
+    <id>http://leywis.github.io/2017/09/10/clicknouse/</id>
+    <published>2017-09-10T12:11:40.000Z</published>
+    <updated>2017-09-10T12:14:27.536Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<p>为了在动态生成的dom节点上挂载事件，我们通常可以使用<code>事件绑定</code>，例如Jquery(zepto)中封装好的<code>$(document)</code>来进行事件绑定：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).on(<span class="string">'click'</span>,<span class="string">'domStr'</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	console.log(<span class="string">'我是domStr节点上绑定的click事件'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>但是，这段代码在iphone手机上是触发不了的。</p>
+<a id="more"></a>
+<p>通过查找资料，原来是ios系统和安卓系统的不同，在ios中默认一些节点是无法点击的，例如<code>div</code>等等，解决方法就是在点击的元素上加上<code>cursor:pointer</code>的css样式。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">domStr&#123;</div><div class="line">	cursor:pointer</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当然也可以使用h5中的触摸事件<code>touchend</code>来代替<code>click</code>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).on(<span class="string">'touchend'</span>,<span class="string">'domStr'</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	console.log(<span class="string">'我是domStr节点上绑定的click事件'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;为了在动态生成的dom节点上挂载事件，我们通常可以使用&lt;code&gt;事件绑定&lt;/code&gt;，例如Jquery(zepto)中封装好的&lt;code&gt;$(document)&lt;/code&gt;来进行事件绑定：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$(document).on(&lt;span class=&quot;string&quot;&gt;&#39;click&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;domStr&#39;&lt;/span&gt;,&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;function&lt;/span&gt;&lt;/span&gt;()&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	console.log(&lt;span class=&quot;string&quot;&gt;&#39;我是domStr节点上绑定的click事件&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;但是，这段代码在iphone手机上是触发不了的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://leywis.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="jquery/zepto" scheme="http://leywis.github.io/tags/jquery-zepto/"/>
+    
+      <category term="Tips" scheme="http://leywis.github.io/tags/Tips/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>想随便扯点</title>
+    <link href="http://leywis.github.io/2017/09/10/mymoon/"/>
+    <id>http://leywis.github.io/2017/09/10/mymoon/</id>
+    <published>2017-09-10T11:19:02.000Z</published>
+    <updated>2017-09-10T11:30:45.707Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<blockquote>
+<p>一切都是来的那么自然，渴望成长的愿望似乎还昨日萌生，今天的自己就已经大学毕业，走向社会。过程中没有像影视中的那么热烈，只是集体简单的离别的祝贺，彼此告慰着学生时代的结束，但是所幸…毕业不意味离别。</p>
+</blockquote>
+<p><img src="../images/timg.jpg" alt="成长" align="center"></p>
+<h4 id="毕业了，有些事貌似要做"><a href="#毕业了，有些事貌似要做" class="headerlink" title="- 毕业了，有些事貌似要做"></a>- 毕业了，有些事貌似要做</h4><p>回想下大学的生活，仿佛就是和几个朋友打游戏打过来的，难免有些小腐朽哈！but，起码和朋y’y友开心啊，没啥好后悔的。得到了一些东西的同时，总会失去一些。</p>
+<p>强制自己不依赖父母，虽然这觉悟有点晚！</p>
+<p>生活中不止是玩，需要去做一些自己曾经不想做的事。成长就意味着责任，我们需要考虑的就要相应的变多。</p>
+<p>学会克服自己的一些…<code>恐惧</code>，应该可以这么说，简而言之，就是去为自己喜欢的事去做一些尝试，没有尝试，永远不会取得成效。</p>
+<p>养成一些习惯，<code>eg</code>: 每天两小时的充电时间。</p>
+<p>….</p>
+<p>还有很多，我只是想到哪些记下哪些。总结一些就是<code>改变 - change</code>!</p>
+<a id="more"></a>
+<h4 id="看下镜中的自己"><a href="#看下镜中的自己" class="headerlink" title="- 看下镜中的自己"></a>- 看下镜中的自己</h4><p>不得不说，我一身的缺点，但是我也一直的尝试去改变，但是，性格是与生俱来的，想改变几乎不可能，但是，我也会努力的去克制。</p>
+<p>首先就是自己的臭脾气，当然，这么些年来，我可没少因为脾气做下一些令我后悔的事。我也一直在克制，哈，成效还凑合，从以前的<code>错话不能搭一句</code>已经慢慢变成<code>不时才会小不爽</code>。</p>
+<p>刘某人，你太怂了，做事瞻前顾后。</p>
+<p>没耐心，总是渴望一口吃成胖子，做事总是希望在很短时间就收到成效。事实证明，总是无用功居多，还浪费时间。</p>
+<h4 id="你不努力，别人想拉你一把都难"><a href="#你不努力，别人想拉你一把都难" class="headerlink" title="- 你不努力，别人想拉你一把都难"></a>- 你不努力，别人想拉你一把都难</h4><p>这次找工作的一段时间，历时19天，除去周末和一些其他时间，也耗时11天，整整两个礼拜的工作日再加一天的<code>礼拜六</code></p>
+<p>难，难，难，</p>
+<p>累，累，累</p>
+<p>why，还不是自己能力上的欠缺嘛！</p>
+<p>我遇到两三家的山西老乡，都谈的不错，可惜最后都黄了。其中有一家的HR和我是<code>山西晋城老乡</code>，她虽然感觉我刚毕业，离任职要求还有些差距，但还是把我简历推了上去，对此我真的很感激，但是结果仍然石沉大海…</p>
+<p>如果，我能拿出做够多的工作经历，如果我能斩钉截铁的告诉他，我可以。一切都会容易的多。</p>
+<hr>
+<h4 id="End"><a href="#End" class="headerlink" title="- End"></a>- End</h4><p>随着长大，随着经历，我们也应该改变的自己的思维方式去对人对事。不然若干年后，增长的只有年龄，内心徒留悲哀。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一切都是来的那么自然，渴望成长的愿望似乎还昨日萌生，今天的自己就已经大学毕业，走向社会。过程中没有像影视中的那么热烈，只是集体简单的离别的祝贺，彼此告慰着学生时代的结束，但是所幸…毕业不意味离别。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;../images/timg.jpg&quot; alt=&quot;成长&quot; align=&quot;center&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;毕业了，有些事貌似要做&quot;&gt;&lt;a href=&quot;#毕业了，有些事貌似要做&quot; class=&quot;headerlink&quot; title=&quot;- 毕业了，有些事貌似要做&quot;&gt;&lt;/a&gt;- 毕业了，有些事貌似要做&lt;/h4&gt;&lt;p&gt;回想下大学的生活，仿佛就是和几个朋友打游戏打过来的，难免有些小腐朽哈！but，起码和朋y’y友开心啊，没啥好后悔的。得到了一些东西的同时，总会失去一些。&lt;/p&gt;
+&lt;p&gt;强制自己不依赖父母，虽然这觉悟有点晚！&lt;/p&gt;
+&lt;p&gt;生活中不止是玩，需要去做一些自己曾经不想做的事。成长就意味着责任，我们需要考虑的就要相应的变多。&lt;/p&gt;
+&lt;p&gt;学会克服自己的一些…&lt;code&gt;恐惧&lt;/code&gt;，应该可以这么说，简而言之，就是去为自己喜欢的事去做一些尝试，没有尝试，永远不会取得成效。&lt;/p&gt;
+&lt;p&gt;养成一些习惯，&lt;code&gt;eg&lt;/code&gt;: 每天两小时的充电时间。&lt;/p&gt;
+&lt;p&gt;….&lt;/p&gt;
+&lt;p&gt;还有很多，我只是想到哪些记下哪些。总结一些就是&lt;code&gt;改变 - change&lt;/code&gt;!&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="心情随笔" scheme="http://leywis.github.io/categories/%E5%BF%83%E6%83%85%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="成长" scheme="http://leywis.github.io/tags/%E6%88%90%E9%95%BF/"/>
+    
+      <category term="心情" scheme="http://leywis.github.io/tags/%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
   
   <entry>
     <title>flex弹性布局（语法）</title>
@@ -136,11 +228,11 @@
   </entry>
   
   <entry>
-    <title>周末学一点：gulp入门和API简述</title>
+    <title>Weekend Task：gulp入门和API简述</title>
     <link href="http://leywis.github.io/2017/08/12/gulp-learn/"/>
     <id>http://leywis.github.io/2017/08/12/gulp-learn/</id>
     <published>2017-08-12T08:35:47.000Z</published>
-    <updated>2017-09-03T02:37:14.266Z</updated>
+    <updated>2017-09-10T11:35:19.584Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <blockquote>
