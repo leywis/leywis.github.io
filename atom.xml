@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>leywis</title>
+  
   <subtitle>怕什么真理千万`进一步有一步的欢喜</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://leywis.github.io/"/>
-  <updated>2017-09-10T12:14:27.536Z</updated>
+  <updated>2017-10-04T01:47:36.724Z</updated>
   <id>http://leywis.github.io/</id>
   
   <author>
@@ -16,29 +17,26 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Tips:关于iphone手机上click事件触发不了的Bug</title>
+    <title>关于iphone手机上click事件触发不了的Bug</title>
     <link href="http://leywis.github.io/2017/09/10/clicknouse/"/>
     <id>http://leywis.github.io/2017/09/10/clicknouse/</id>
     <published>2017-09-10T12:11:40.000Z</published>
-    <updated>2017-09-10T12:14:27.536Z</updated>
+    <updated>2017-10-04T01:47:36.724Z</updated>
     
-    <content type="html"><![CDATA[<hr>
-<p>为了在动态生成的dom节点上挂载事件，我们通常可以使用<code>事件绑定</code>，例如Jquery(zepto)中封装好的<code>$(document)</code>来进行事件绑定：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).on(<span class="string">'click'</span>,<span class="string">'domStr'</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	console.log(<span class="string">'我是domStr节点上绑定的click事件'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>但是，这段代码在iphone手机上是触发不了的。</p>
-<a id="more"></a>
-<p>通过查找资料，原来是ios系统和安卓系统的不同，在ios中默认一些节点是无法点击的，例如<code>div</code>等等，解决方法就是在点击的元素上加上<code>cursor:pointer</code>的css样式。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">domStr&#123;</div><div class="line">	cursor:pointer</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>当然也可以使用h5中的触摸事件<code>touchend</code>来代替<code>click</code>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).on(<span class="string">'touchend'</span>,<span class="string">'domStr'</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	console.log(<span class="string">'我是domStr节点上绑定的click事件'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-]]></content>
+    <content type="html"><![CDATA[<hr><p>为了在动态生成的dom节点上挂载事件，我们通常可以使用<code>事件绑定</code>，例如Jquery(zepto)中封装好的<code>$(document)</code>来进行事件绑定：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).on(<span class="string">'click'</span>,<span class="string">'domStr'</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">console.log(<span class="string">'我是domStr节点上绑定的click事件'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure><p>但是，这段代码在iphone手机上是触发不了的。</p><p>通过查找资料，原来是ios系统和安卓系统的不同，在ios中默认一些节点是无法点击的，例如<code>div</code>等等，解决方法就是在点击的元素上加上<code>cursor:pointer</code>的css样式。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">domStr&#123;</div><div class="line">cursor:pointer</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>当然也可以使用h5中的触摸事件<code>touchend</code>来代替<code>click</code>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).on(<span class="string">'touchend'</span>,<span class="string">'domStr'</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">console.log(<span class="string">'我是domStr节点上绑定的click事件'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
-      &lt;hr&gt;
-&lt;p&gt;为了在动态生成的dom节点上挂载事件，我们通常可以使用&lt;code&gt;事件绑定&lt;/code&gt;，例如Jquery(zepto)中封装好的&lt;code&gt;$(document)&lt;/code&gt;来进行事件绑定：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$(document).on(&lt;span class=&quot;string&quot;&gt;&#39;click&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;domStr&#39;&lt;/span&gt;,&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;function&lt;/span&gt;&lt;/span&gt;()&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	console.log(&lt;span class=&quot;string&quot;&gt;&#39;我是domStr节点上绑定的click事件&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;但是，这段代码在iphone手机上是触发不了的。&lt;/p&gt;
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;为了在动态生成的dom节点上挂载事件，我们通常可以使用&lt;code&gt;事件绑定&lt;/code&gt;，例如Jquery(zepto)中封装好的&lt;code&gt;$(document)&lt;/code&gt;来进行事件绑定：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;
+      
     
     </summary>
     
-      <category term="前端" scheme="http://leywis.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="踩坑之路" scheme="http://leywis.github.io/categories/%E8%B8%A9%E5%9D%91%E4%B9%8B%E8%B7%AF/"/>
     
     
       <category term="jquery/zepto" scheme="http://leywis.github.io/tags/jquery-zepto/"/>
@@ -52,49 +50,20 @@
     <link href="http://leywis.github.io/2017/09/10/mymoon/"/>
     <id>http://leywis.github.io/2017/09/10/mymoon/</id>
     <published>2017-09-10T11:19:02.000Z</published>
-    <updated>2017-09-10T11:30:45.707Z</updated>
+    <updated>2017-10-04T01:47:55.326Z</updated>
     
-    <content type="html"><![CDATA[<hr>
-<blockquote>
-<p>一切都是来的那么自然，渴望成长的愿望似乎还昨日萌生，今天的自己就已经大学毕业，走向社会。过程中没有像影视中的那么热烈，只是集体简单的离别的祝贺，彼此告慰着学生时代的结束，但是所幸…毕业不意味离别。</p>
-</blockquote>
-<p><img src="../images/timg.jpg" alt="成长" align="center"></p>
-<h4 id="毕业了，有些事貌似要做"><a href="#毕业了，有些事貌似要做" class="headerlink" title="- 毕业了，有些事貌似要做"></a>- 毕业了，有些事貌似要做</h4><p>回想下大学的生活，仿佛就是和几个朋友打游戏打过来的，难免有些小腐朽哈！but，起码和朋y’y友开心啊，没啥好后悔的。得到了一些东西的同时，总会失去一些。</p>
-<p>强制自己不依赖父母，虽然这觉悟有点晚！</p>
-<p>生活中不止是玩，需要去做一些自己曾经不想做的事。成长就意味着责任，我们需要考虑的就要相应的变多。</p>
-<p>学会克服自己的一些…<code>恐惧</code>，应该可以这么说，简而言之，就是去为自己喜欢的事去做一些尝试，没有尝试，永远不会取得成效。</p>
-<p>养成一些习惯，<code>eg</code>: 每天两小时的充电时间。</p>
-<p>….</p>
-<p>还有很多，我只是想到哪些记下哪些。总结一些就是<code>改变 - change</code>!</p>
-<a id="more"></a>
-<h4 id="看下镜中的自己"><a href="#看下镜中的自己" class="headerlink" title="- 看下镜中的自己"></a>- 看下镜中的自己</h4><p>不得不说，我一身的缺点，但是我也一直的尝试去改变，但是，性格是与生俱来的，想改变几乎不可能，但是，我也会努力的去克制。</p>
-<p>首先就是自己的臭脾气，当然，这么些年来，我可没少因为脾气做下一些令我后悔的事。我也一直在克制，哈，成效还凑合，从以前的<code>错话不能搭一句</code>已经慢慢变成<code>不时才会小不爽</code>。</p>
-<p>刘某人，你太怂了，做事瞻前顾后。</p>
-<p>没耐心，总是渴望一口吃成胖子，做事总是希望在很短时间就收到成效。事实证明，总是无用功居多，还浪费时间。</p>
-<h4 id="你不努力，别人想拉你一把都难"><a href="#你不努力，别人想拉你一把都难" class="headerlink" title="- 你不努力，别人想拉你一把都难"></a>- 你不努力，别人想拉你一把都难</h4><p>这次找工作的一段时间，历时19天，除去周末和一些其他时间，也耗时11天，整整两个礼拜的工作日再加一天的<code>礼拜六</code></p>
-<p>难，难，难，</p>
-<p>累，累，累</p>
-<p>why，还不是自己能力上的欠缺嘛！</p>
-<p>我遇到两三家的山西老乡，都谈的不错，可惜最后都黄了。其中有一家的HR和我是<code>山西晋城老乡</code>，她虽然感觉我刚毕业，离任职要求还有些差距，但还是把我简历推了上去，对此我真的很感激，但是结果仍然石沉大海…</p>
-<p>如果，我能拿出做够多的工作经历，如果我能斩钉截铁的告诉他，我可以。一切都会容易的多。</p>
-<hr>
-<h4 id="End"><a href="#End" class="headerlink" title="- End"></a>- End</h4><p>随着长大，随着经历，我们也应该改变的自己的思维方式去对人对事。不然若干年后，增长的只有年龄，内心徒留悲哀。</p>
-]]></content>
+    <content type="html"><![CDATA[<hr><blockquote><p>一切都是来的那么自然，渴望成长的愿望似乎还昨日萌生，今天的自己就已经大学毕业，走向社会。过程中没有像影视中的那么热烈，只是集体简单的离别的祝贺，彼此告慰着学生时代的结束，但是所幸…毕业不意味离别。</p></blockquote><p><img src="../../../../images/timg.jpg" alt="成长" align="center"></p><h4 id="毕业了，有些事貌似要做"><a href="#毕业了，有些事貌似要做" class="headerlink" title="- 毕业了，有些事貌似要做"></a>- 毕业了，有些事貌似要做</h4><p>回想下大学的生活，仿佛就是和几个朋友打游戏打过来的，难免有些小腐朽哈！but，起码和朋y’y友开心啊，没啥好后悔的。得到了一些东西的同时，总会失去一些。</p><p>强制自己不依赖父母，虽然这觉悟有点晚！</p><p>生活中不止是玩，需要去做一些自己曾经不想做的事。成长就意味着责任，我们需要考虑的就要相应的变多。</p><p>学会克服自己的一些…<code>恐惧</code>，应该可以这么说，简而言之，就是去为自己喜欢的事去做一些尝试，没有尝试，永远不会取得成效。</p><p>养成一些习惯，<code>eg</code>: 每天两小时的充电时间。</p><p>….</p><p>还有很多，我只是想到哪些记下哪些。总结一些就是<code>改变 - change</code>!</p><h4 id="看下镜中的自己"><a href="#看下镜中的自己" class="headerlink" title="- 看下镜中的自己"></a>- 看下镜中的自己</h4><p>不得不说，我一身的缺点，但是我也一直的尝试去改变，但是，性格是与生俱来的，想改变几乎不可能，但是，我也会努力的去克制。</p><p>首先就是自己的臭脾气，当然，这么些年来，我可没少因为脾气做下一些令我后悔的事。我也一直在克制，哈，成效还凑合，从以前的<code>错话不能搭一句</code>已经慢慢变成<code>不时才会小不爽</code>。</p><p>刘某人，你太怂了，做事瞻前顾后。</p><p>没耐心，总是渴望一口吃成胖子，做事总是希望在很短时间就收到成效。事实证明，总是无用功居多，还浪费时间。</p><h4 id="你不努力，别人想拉你一把都难"><a href="#你不努力，别人想拉你一把都难" class="headerlink" title="- 你不努力，别人想拉你一把都难"></a>- 你不努力，别人想拉你一把都难</h4><p>这次找工作的一段时间，历时19天，除去周末和一些其他时间，也耗时11天，整整两个礼拜的工作日再加一天的<code>礼拜六</code></p><p>难，难，难，</p><p>累，累，累</p><p>why，还不是自己能力上的欠缺嘛！</p><p>我遇到两三家的山西老乡，都谈的不错，可惜最后都黄了。其中有一家的HR和我是<code>山西晋城老乡</code>，她虽然感觉我刚毕业，离任职要求还有些差距，但还是把我简历推了上去，对此我真的很感激，但是结果仍然石沉大海…</p><p>如果，我能拿出做够多的工作经历，如果我能斩钉截铁的告诉他，我可以。一切都会容易的多。</p><hr><h4 id="End"><a href="#End" class="headerlink" title="- End"></a>- End</h4><p>随着长大，随着经历，我们也应该改变的自己的思维方式去对人对事。不然若干年后，增长的只有年龄，内心徒留悲哀。</p>]]></content>
     
     <summary type="html">
     
-      &lt;hr&gt;
+      
+      
+        &lt;hr&gt;
 &lt;blockquote&gt;
 &lt;p&gt;一切都是来的那么自然，渴望成长的愿望似乎还昨日萌生，今天的自己就已经大学毕业，走向社会。过程中没有像影视中的那么热烈，只是集体简单的离别的祝贺，彼此告慰着学生时代的结束，但是所幸…毕业不意味离别。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;../images/timg.jpg&quot; alt=&quot;成长&quot; align=&quot;center&quot;&gt;&lt;/p&gt;
-&lt;h4 id=&quot;毕业了，有些事貌似要做&quot;&gt;&lt;a href=&quot;#毕业了，有些事貌似要做&quot; class=&quot;headerlink&quot; title=&quot;- 毕业了，有些事貌似要做&quot;&gt;&lt;/a&gt;- 毕业了，有些事貌似要做&lt;/h4&gt;&lt;p&gt;回想下大学的生活，仿佛就是和几个朋友打游戏打过来的，难免有些小腐朽哈！but，起码和朋y’y友开心啊，没啥好后悔的。得到了一些东西的同时，总会失去一些。&lt;/p&gt;
-&lt;p&gt;强制自己不依赖父母，虽然这觉悟有点晚！&lt;/p&gt;
-&lt;p&gt;生活中不止是玩，需要去做一些自己曾经不想做的事。成长就意味着责任，我们需要考虑的就要相应的变多。&lt;/p&gt;
-&lt;p&gt;学会克服自己的一些…&lt;code&gt;恐惧&lt;/code&gt;，应该可以这么说，简而言之，就是去为自己喜欢的事去做一些尝试，没有尝试，永远不会取得成效。&lt;/p&gt;
-&lt;p&gt;养成一些习惯，&lt;code&gt;eg&lt;/code&gt;: 每天两小时的充电时间。&lt;/p&gt;
-&lt;p&gt;….&lt;/p&gt;
-&lt;p&gt;还有很多，我只是想到哪些记下哪些。总结一些就是&lt;code&gt;改变 - change&lt;/code&gt;!&lt;/p&gt;
+&lt;p
+      
     
     </summary>
     
@@ -112,105 +81,9 @@
     <link href="http://leywis.github.io/2017/08/13/flex-learn/"/>
     <id>http://leywis.github.io/2017/08/13/flex-learn/</id>
     <published>2017-08-13T04:39:53.000Z</published>
-    <updated>2017-08-13T04:45:25.586Z</updated>
+    <updated>2017-10-03T11:23:28.420Z</updated>
     
-    <content type="html"><![CDATA[<hr>
-<blockquote>
-<p> flex，也是我们称的弹性盒子布局，也是继流式布局，浮动布局和定位布局之后的第四种布局方式。flex可以轻松的帮助我们解决垂直居中等布局问题。目前flex已经兼容 市面主流浏览器，我们可以安心的使用它。</p>
-</blockquote>
-<h4 id="1-了解flex"><a href="#1-了解flex" class="headerlink" title="1.了解flex"></a>1.了解flex</h4><p><code>flex</code>布局中，核心的概念的就是<code>轴</code>和<code>容器</code>。轴又分为主轴和交叉轴，容器有分为父容器和子容器。可以说，所有效果的实现都是基于这四个概念。</p>
-<p>当我们为<code>父容器</code>设置<code>display:flex</code>后，我们就可以使用弹性盒子布局。利用为父容器和子容器设置不同的属性来实现各种布局效果。</p>
-<p>父容器和子容器分别有六个属性，父容器属性决定了项目的排列方式，而子容器属性则是决定单个项目的排列方式。当两者同时设置的时候，则以子容器属性为准。</p>
-<p><strong>注意：当设置上<code>display:flex</code>属性后，子元素的<code>float</code>，<code>clear</code>，<code>vartical-align</code>属性将会失效。</strong></p>
-<p>具体可以参考<code>阮一峰</code>的flex教程，分为<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">语法篇</a>和<a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">实例篇</a>。</p>
-<h4 id="2-父容器属性"><a href="#2-父容器属性" class="headerlink" title="2.父容器属性"></a>2.父容器属性</h4><p>父容器属性有如下6种：</p>
-<ul>
-<li><code>flex-direction</code> </li>
-<li><code>flex-wrap</code></li>
-<li><code>flex-flow</code></li>
-<li><code>justify-content</code></li>
-<li><code>align-items</code></li>
-<li><code>align-content</code></li>
-</ul>
-<p>以下分别详细介绍每个属性，记下我自己实验中的每个坑：（顺序按照实现顺序，有些前面的问题会在后面新属性涉及的时候解决）</p>
-<h5 id="2-1-flex-direction-–-决定主轴方向，即项目排列方向"><a href="#2-1-flex-direction-–-决定主轴方向，即项目排列方向" class="headerlink" title="2.1 flex-direction – 决定主轴方向，即项目排列方向"></a>2.1 flex-direction – 决定主轴方向，即项目排列方向</h5><blockquote>
-<p>flex-direction 有4个值：</p>
-<ul>
-<li>row（默认值）：主轴为水平方向，起点在左端。</li>
-<li>row-reverse：主轴为水平方向，起点在右端。</li>
-<li>column：主轴为垂直方向，起点在上沿。</li>
-<li>column-reverse：主轴为垂直方向，起点在下沿。</li>
-</ul>
-</blockquote>
-<pre><code>当我们为父容器设置上`display:flex`后，我们的元素默认排在一排，当元素数量过多的时候，即使我们为每个子项目设置了固定的`width`，项目也不会超出父容器或者换行，而是被压缩，仍在一行展示。
-
-但是当项目垂直展示的时候就会超出，即子元素的`height`不会弹性。
-</code></pre><h5 id="2-2-flex-wrap-–-规定当元素宽度超出父容器的子元素的呈现方式"><a href="#2-2-flex-wrap-–-规定当元素宽度超出父容器的子元素的呈现方式" class="headerlink" title="2.2 flex-wrap – 规定当元素宽度超出父容器的子元素的呈现方式"></a>2.2 flex-wrap – 规定当元素宽度超出父容器的子元素的呈现方式</h5><blockquote>
-<p>flex-wrap 有3个值：</p>
-<ul>
-<li>nowrap（默认）：不换行。这就是为什么2.1中我们碰到的<code>width</code>弹性的原因。</li>
-<li>wrap：换行，第一行在上方。</li>
-<li>wrap-reverse：换行，第一行在下方。</li>
-</ul>
-</blockquote>
-<p>  当加上<code>flex-wrap:wrap</code>的时候，我们会发现换行后，两行并没有并列，而是分开一定间隔。<br>  暂时不知道原因，我们继续往下看。</p>
-<h5 id="2-3-flex-flow-–-这是一个简写的属性，是flex-direction，flex-wrap的综合写法"><a href="#2-3-flex-flow-–-这是一个简写的属性，是flex-direction，flex-wrap的综合写法" class="headerlink" title="2.3 flex-flow – 这是一个简写的属性，是flex-direction，flex-wrap的综合写法"></a>2.3 flex-flow – 这是一个简写的属性，是<code>flex-direction</code>，<code>flex-wrap</code>的综合写法</h5><h5 id="2-4-justify-content-–-规定了项目在主轴上的对齐方式"><a href="#2-4-justify-content-–-规定了项目在主轴上的对齐方式" class="headerlink" title="2.4 justify-content – 规定了项目在主轴上的对齐方式"></a>2.4 justify-content – 规定了项目在主轴上的对齐方式</h5><blockquote>
-<p>justify-content 有5个值：</p>
-<ul>
-<li>flex-start（默认值）：左对齐</li>
-<li>flex-end：右对齐</li>
-<li>center： 居中</li>
-<li>space-between：子容器沿主轴均匀分布，位于首两端的子容器与父容器相切。</li>
-<li>space-around：子容器沿主轴均匀分布，位于首尾两端的子容器到父容器的距离是子容器间距的一半。</li>
-</ul>
-</blockquote>
-<p>  无论垂直还是水平方向都适用，但是<code>space-between</code>和<code>space-around</code>只有元素未占满一行的时候才生效。当然可以设置padding和margin来实现间隔。</p>
-<h5 id="2-5-align-items-–-定义项目在交叉轴的排列方式"><a href="#2-5-align-items-–-定义项目在交叉轴的排列方式" class="headerlink" title="2.5 align-items – 定义项目在交叉轴的排列方式"></a>2.5 align-items – 定义项目在交叉轴的排列方式</h5><blockquote>
-<p>align-items 有5个值：</p>
-<ul>
-<li>flex-start：交叉轴的起点对齐。</li>
-<li>flex-end：交叉轴的终点对齐。</li>
-<li>center： 居中</li>
-<li>baseline: 项目的第一行文字的基线对齐。</li>
-<li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li>
-</ul>
-</blockquote>
-<p>  <strong>注意：</strong>最后一个属性是默认，当我们没有给元素设置高度或设置为<code>auto</code>则会占满盒子。</p>
-<h5 id="2-6-align-content-–-规定了多条轴线的对齐方式，一条则无效。"><a href="#2-6-align-content-–-规定了多条轴线的对齐方式，一条则无效。" class="headerlink" title="2.6 align-content – 规定了多条轴线的对齐方式，一条则无效。"></a>2.6 align-content – 规定了多条轴线的对齐方式，一条则无效。</h5><blockquote>
-<p>align-content 有6个值：</p>
-<ul>
-<li>flex-start：与交叉轴的起点对齐。</li>
-<li>flex-end：交叉轴的终点对齐。</li>
-<li>center：与交叉轴的中点对齐。</li>
-<li>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</li>
-<li>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</li>
-<li>stretch（默认值）：轴线占满整个交叉轴。拉伸对齐。</li>
-</ul>
-</blockquote>
-<p>  此时，我们看到默认值是<code>stretch</code>的时候，我们就解决了2.2中的问题，当元素换行产生多条轴线后的对齐方式，当我们把对齐方式改为<code>flex-start</code>我们就可以看到我们预想中的效果。</p>
-<h4 id="3-子容器属性"><a href="#3-子容器属性" class="headerlink" title="3.子容器属性"></a>3.子容器属性</h4><p>子容器属性有如下6种：</p>
-<ul>
-<li><code>order</code> </li>
-<li><code>flex-grow</code></li>
-<li><code>flex-shirnk</code></li>
-<li><code>flex-basis</code></li>
-<li><code>flex</code></li>
-<li><code>align-self</code></li>
-</ul>
-<p>以下分别详细介绍每个属性，需要注意的是子元素的属性会由于父元素的属性：</p>
-<h5 id="3-1-order-–-定义了项目的排列顺序，默认是0"><a href="#3-1-order-–-定义了项目的排列顺序，默认是0" class="headerlink" title="3.1 order – 定义了项目的排列顺序，默认是0"></a>3.1 order – 定义了项目的排列顺序，默认是0</h5><p>可以是负数</p>
-<p>当order的值相同，按dom中顺序排列</p>
-<p>这样方便了我们在做项目的时候，如果遇到需求改动，避免了大片的修改html。</p>
-<h5 id="3-2-flex-grow-–-定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。"><a href="#3-2-flex-grow-–-定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。" class="headerlink" title="3.2 flex-grow – 定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。"></a>3.2 flex-grow – 定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</h5><p>如果设置为<code>1</code>，则该元素将会占满剩余空间。</p>
-<p>如果设置为<code>2</code>，则元素会宽度放大两倍，但是需要注意，元素放大不会导致换行或者超出，最大就是占满一行。</p>
-<h5 id="3-3-flex-shirnk-–-义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。"><a href="#3-3-flex-shirnk-–-义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。" class="headerlink" title="3.3 flex-shirnk – 义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。"></a>3.3 flex-shirnk – 义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</h5><p>如果设置为<code>0</code>，则该元素不会缩小。</p>
-<p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。</p>
-<h5 id="3-4-flex-basis-–-定义了在分配多余空间之前，项目占据的主轴空间，默认是auto。"><a href="#3-4-flex-basis-–-定义了在分配多余空间之前，项目占据的主轴空间，默认是auto。" class="headerlink" title="3.4 flex-basis – 定义了在分配多余空间之前，项目占据的主轴空间，默认是auto。"></a>3.4 flex-basis – 定义了在分配多余空间之前，项目占据的主轴空间，默认是auto。</h5><p><code>auto</code>代表了项目本身的宽度所占的空间</p>
-<p>我们可以想设置<code>width</code>属性一样设置该属性，其效果类似放大的效果</p>
-<h5 id="3-5-flex-–-flex-grow-flex-shrink-和-flex-basis的简写，默认值为0-1-auto。后两个属性可选。"><a href="#3-5-flex-–-flex-grow-flex-shrink-和-flex-basis的简写，默认值为0-1-auto。后两个属性可选。" class="headerlink" title="3.5 flex – flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。"></a>3.5 flex – flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</h5><h5 id="3-6-align-self-–-设置单个项目的对齐方式"><a href="#3-6-align-self-–-设置单个项目的对齐方式" class="headerlink" title="3.6 align-self – 设置单个项目的对齐方式"></a>3.6 align-self – 设置单个项目的对齐方式</h5><p>允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</p>
-<hr>
-<p><strong>这就是flex的基本知识点</strong>，需要理解的就是，<code>flex</code>既然称为弹性盒子布局，那就有必要去淡化<code>width</code>的概念，因为随着各种属性的设置都可能导致盒子弹性伸缩而与我们所设置<code>width</code>属性的值不一样。</p>
-]]></content>
+    <content type="html"><![CDATA[<hr><blockquote><p> flex，也是我们称的弹性盒子布局，也是继流式布局，浮动布局和定位布局之后的第四种布局方式。flex可以轻松的帮助我们解决垂直居中等布局问题。目前flex已经兼容 市面主流浏览器，我们可以安心的使用它。</p></blockquote><h4 id="1-了解flex"><a href="#1-了解flex" class="headerlink" title="1.了解flex"></a>1.了解flex</h4><p><code>flex</code>布局中，核心的概念的就是<code>轴</code>和<code>容器</code>。轴又分为主轴和交叉轴，容器有分为父容器和子容器。可以说，所有效果的实现都是基于这四个概念。</p><p>当我们为<code>父容器</code>设置<code>display:flex</code>后，我们就可以使用弹性盒子布局。利用为父容器和子容器设置不同的属性来实现各种布局效果。</p><p>父容器和子容器分别有六个属性，父容器属性决定了项目的排列方式，而子容器属性则是决定单个项目的排列方式。当两者同时设置的时候，则以子容器属性为准。</p><p><strong>注意：当设置上<code>display:flex</code>属性后，子元素的<code>float</code>，<code>clear</code>，<code>vartical-align</code>属性将会失效。</strong></p><p>具体可以参考<code>阮一峰</code>的flex教程，分为<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">语法篇</a>和<a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="external">实例篇</a>。</p><h4 id="2-父容器属性"><a href="#2-父容器属性" class="headerlink" title="2.父容器属性"></a>2.父容器属性</h4><p>父容器属性有如下6种：</p><ul><li><code>flex-direction</code> </li><li><code>flex-wrap</code></li><li><code>flex-flow</code></li><li><code>justify-content</code></li><li><code>align-items</code></li><li><code>align-content</code></li></ul><p>以下分别详细介绍每个属性，记下我自己实验中的每个坑：（顺序按照实现顺序，有些前面的问题会在后面新属性涉及的时候解决）</p><h5 id="2-1-flex-direction-–-决定主轴方向，即项目排列方向"><a href="#2-1-flex-direction-–-决定主轴方向，即项目排列方向" class="headerlink" title="2.1 flex-direction – 决定主轴方向，即项目排列方向"></a>2.1 flex-direction – 决定主轴方向，即项目排列方向</h5><blockquote><p>flex-direction 有4个值：</p><ul><li>row（默认值）：主轴为水平方向，起点在左端。</li><li>row-reverse：主轴为水平方向，起点在右端。</li><li>column：主轴为垂直方向，起点在上沿。</li><li>column-reverse：主轴为垂直方向，起点在下沿。</li></ul></blockquote><pre><code>当我们为父容器设置上`display:flex`后，我们的元素默认排在一排，当元素数量过多的时候，即使我们为每个子项目设置了固定的`width`，项目也不会超出父容器或者换行，而是被压缩，仍在一行展示。但是当项目垂直展示的时候就会超出，即子元素的`height`不会弹性。</code></pre><h5 id="2-2-flex-wrap-–-规定当元素宽度超出父容器的子元素的呈现方式"><a href="#2-2-flex-wrap-–-规定当元素宽度超出父容器的子元素的呈现方式" class="headerlink" title="2.2 flex-wrap – 规定当元素宽度超出父容器的子元素的呈现方式"></a>2.2 flex-wrap – 规定当元素宽度超出父容器的子元素的呈现方式</h5><blockquote><p>flex-wrap 有3个值：</p><ul><li>nowrap（默认）：不换行。这就是为什么2.1中我们碰到的<code>width</code>弹性的原因。</li><li>wrap：换行，第一行在上方。</li><li>wrap-reverse：换行，第一行在下方。</li></ul></blockquote><p>  当加上<code>flex-wrap:wrap</code>的时候，我们会发现换行后，两行并没有并列，而是分开一定间隔。<br>  暂时不知道原因，我们继续往下看。</p><h5 id="2-3-flex-flow-–-这是一个简写的属性，是flex-direction，flex-wrap的综合写法"><a href="#2-3-flex-flow-–-这是一个简写的属性，是flex-direction，flex-wrap的综合写法" class="headerlink" title="2.3 flex-flow – 这是一个简写的属性，是flex-direction，flex-wrap的综合写法"></a>2.3 flex-flow – 这是一个简写的属性，是<code>flex-direction</code>，<code>flex-wrap</code>的综合写法</h5><h5 id="2-4-justify-content-–-规定了项目在主轴上的对齐方式"><a href="#2-4-justify-content-–-规定了项目在主轴上的对齐方式" class="headerlink" title="2.4 justify-content – 规定了项目在主轴上的对齐方式"></a>2.4 justify-content – 规定了项目在主轴上的对齐方式</h5><blockquote><p>justify-content 有5个值：</p><ul><li>flex-start（默认值）：左对齐</li><li>flex-end：右对齐</li><li>center： 居中</li><li>space-between：子容器沿主轴均匀分布，位于首两端的子容器与父容器相切。</li><li>space-around：子容器沿主轴均匀分布，位于首尾两端的子容器到父容器的距离是子容器间距的一半。</li></ul></blockquote><p>  无论垂直还是水平方向都适用，但是<code>space-between</code>和<code>space-around</code>只有元素未占满一行的时候才生效。当然可以设置padding和margin来实现间隔。</p><h5 id="2-5-align-items-–-定义项目在交叉轴的排列方式"><a href="#2-5-align-items-–-定义项目在交叉轴的排列方式" class="headerlink" title="2.5 align-items – 定义项目在交叉轴的排列方式"></a>2.5 align-items – 定义项目在交叉轴的排列方式</h5><blockquote><p>align-items 有5个值：</p><ul><li>flex-start：交叉轴的起点对齐。</li><li>flex-end：交叉轴的终点对齐。</li><li>center： 居中</li><li>baseline: 项目的第一行文字的基线对齐。</li><li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li></ul></blockquote><p>  <strong>注意：</strong>最后一个属性是默认，当我们没有给元素设置高度或设置为<code>auto</code>则会占满盒子。</p><h5 id="2-6-align-content-–-规定了多条轴线的对齐方式，一条则无效。"><a href="#2-6-align-content-–-规定了多条轴线的对齐方式，一条则无效。" class="headerlink" title="2.6 align-content – 规定了多条轴线的对齐方式，一条则无效。"></a>2.6 align-content – 规定了多条轴线的对齐方式，一条则无效。</h5><blockquote><p>align-content 有6个值：</p><ul><li>flex-start：与交叉轴的起点对齐。</li><li>flex-end：交叉轴的终点对齐。</li><li>center：与交叉轴的中点对齐。</li><li>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</li><li>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</li><li>stretch（默认值）：轴线占满整个交叉轴。拉伸对齐。</li></ul></blockquote><p>  此时，我们看到默认值是<code>stretch</code>的时候，我们就解决了2.2中的问题，当元素换行产生多条轴线后的对齐方式，当我们把对齐方式改为<code>flex-start</code>我们就可以看到我们预想中的效果。</p><h4 id="3-子容器属性"><a href="#3-子容器属性" class="headerlink" title="3.子容器属性"></a>3.子容器属性</h4><p>子容器属性有如下6种：</p><ul><li><code>order</code> </li><li><code>flex-grow</code></li><li><code>flex-shirnk</code></li><li><code>flex-basis</code></li><li><code>flex</code></li><li><code>align-self</code></li></ul><p>以下分别详细介绍每个属性，需要注意的是子元素的属性会由于父元素的属性：</p><h5 id="3-1-order-–-定义了项目的排列顺序，默认是0"><a href="#3-1-order-–-定义了项目的排列顺序，默认是0" class="headerlink" title="3.1 order – 定义了项目的排列顺序，默认是0"></a>3.1 order – 定义了项目的排列顺序，默认是0</h5><p>可以是负数</p><p>当order的值相同，按dom中顺序排列</p><p>这样方便了我们在做项目的时候，如果遇到需求改动，避免了大片的修改html。</p><h5 id="3-2-flex-grow-–-定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。"><a href="#3-2-flex-grow-–-定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。" class="headerlink" title="3.2 flex-grow – 定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。"></a>3.2 flex-grow – 定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</h5><p>如果设置为<code>1</code>，则该元素将会占满剩余空间。</p><p>如果设置为<code>2</code>，则元素会宽度放大两倍，但是需要注意，元素放大不会导致换行或者超出，最大就是占满一行。</p><h5 id="3-3-flex-shirnk-–-义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。"><a href="#3-3-flex-shirnk-–-义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。" class="headerlink" title="3.3 flex-shirnk – 义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。"></a>3.3 flex-shirnk – 义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</h5><p>如果设置为<code>0</code>，则该元素不会缩小。</p><p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。</p><h5 id="3-4-flex-basis-–-定义了在分配多余空间之前，项目占据的主轴空间，默认是auto。"><a href="#3-4-flex-basis-–-定义了在分配多余空间之前，项目占据的主轴空间，默认是auto。" class="headerlink" title="3.4 flex-basis – 定义了在分配多余空间之前，项目占据的主轴空间，默认是auto。"></a>3.4 flex-basis – 定义了在分配多余空间之前，项目占据的主轴空间，默认是auto。</h5><p><code>auto</code>代表了项目本身的宽度所占的空间</p><p>我们可以想设置<code>width</code>属性一样设置该属性，其效果类似放大的效果</p><h5 id="3-5-flex-–-flex-grow-flex-shrink-和-flex-basis的简写，默认值为0-1-auto。后两个属性可选。"><a href="#3-5-flex-–-flex-grow-flex-shrink-和-flex-basis的简写，默认值为0-1-auto。后两个属性可选。" class="headerlink" title="3.5 flex – flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。"></a>3.5 flex – flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</h5><h5 id="3-6-align-self-–-设置单个项目的对齐方式"><a href="#3-6-align-self-–-设置单个项目的对齐方式" class="headerlink" title="3.6 align-self – 设置单个项目的对齐方式"></a>3.6 align-self – 设置单个项目的对齐方式</h5><p>允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</p><hr><p><strong>这就是flex的基本知识点</strong>，需要理解的就是，<code>flex</code>既然称为弹性盒子布局，那就有必要去淡化<code>width</code>的概念，因为随着各种属性的设置都可能导致盒子弹性伸缩而与我们所设置<code>width</code>属性的值不一样。</p>]]></content>
     
     <summary type="html">
     
@@ -218,7 +91,7 @@
     
     </summary>
     
-      <category term="前端" scheme="http://leywis.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="学习笔记" scheme="http://leywis.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
       <category term="css" scheme="http://leywis.github.io/tags/css/"/>
@@ -232,57 +105,9 @@
     <link href="http://leywis.github.io/2017/08/12/gulp-learn/"/>
     <id>http://leywis.github.io/2017/08/12/gulp-learn/</id>
     <published>2017-08-12T08:35:47.000Z</published>
-    <updated>2017-09-10T11:35:19.584Z</updated>
+    <updated>2017-10-04T01:50:57.248Z</updated>
     
-    <content type="html"><![CDATA[<hr>
-<blockquote>
-<p> gulp是一种前端代码构建工具，可以帮助我们完成javascript/sass/coffee/less/html/css等文件进行测试、检查、合并、压缩、格式化、浏览器自动刷新、部署文件生成，并监听文件在改动后重复指定的这些步骤。</p>
-</blockquote>
-<h4 id="1-安装gulp"><a href="#1-安装gulp" class="headerlink" title="1.安装gulp"></a>1.安装gulp</h4><p>gulp是基于node的自动任务运作器，所以我们首先需要安装node，可以去<a href="https://nodejs.org" target="_blank" rel="external">node官网</a>进行下载。安装完成后全局安装gulp。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --global gulp</div></pre></td></tr></table></figure>
-<p>全局安装后，再把安装到项目依赖中。全局安装是为了可以使用gulp的命令，而安装到项目依赖则是为了方便文件引入。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev gulp</div></pre></td></tr></table></figure></p>
-<p>然后在项目根目录下简历gulpfile.js的配置文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var gulp = require(<span class="string">"gulp"</span>);</div><div class="line"></div><div class="line">gulp.task(<span class="string">"default"</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	// 此处添加你的默认任务</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>最后，运行gulp任务。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gulp</div></pre></td></tr></table></figure></p>
-<p><strong>如果要执行单个的任务，只需要输入<code>gulp &lt;task&gt; &lt;othertask&gt;</code>。</strong></p>
-<h4 id="2-gulp-API"><a href="#2-gulp-API" class="headerlink" title="2.gulp API"></a>2.gulp API</h4><blockquote>
-<p><code>gulp</code>借鉴了Unix操作系统中管道（pipe）的思想，前一级的输入，直接在后一级输出。<code>gulp</code>本身只提供了四个简洁的接口，许多功能则是借助插件来实现。</p>
-</blockquote>
-<h5 id="2-1-gulp-task-name-deps-fn"><a href="#2-1-gulp-task-name-deps-fn" class="headerlink" title="2.1 gulp.task(name[,deps],fn)"></a>2.1 gulp.task(name[,deps],fn)</h5><p><code>gulp</code>是基于task来进行的。</p>
-<ul>
-<li>name:任务的名称，必填。</li>
-<li>deps:该任务的前置任务，也就是该任务的依赖，必须在依赖的任务执行完毕，才会执行本任务。</li>
-<li>fn:任务的回调函数。</li>
-</ul>
-<p>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">"defaulttask"</span>,<span class="string">"depsTask"</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	console.log(<span class="string">"this is a Task"</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<h5 id="2-2-gulp-src-globs-options"><a href="#2-2-gulp-src-globs-options" class="headerlink" title="2.2 gulp.src(globs[,options])"></a>2.2 gulp.src(globs[,options])</h5><p><code>globs</code> 是匹配文件，可以是一个string或者数组，其匹配的规则如下：</p>
-<ul>
-<li><code>src/test.js</code> -匹配制定的文件；</li>
-<li><code>*</code> -匹配所有文件，例如<code>&quot;src/*.js&quot;</code>表示匹配src目录下所有的js文件；</li>
-<li><code>**</code> -匹配子文件夹，例如<code>&quot;src/**/*.js&quot;</code>表示匹配src所有子目录下中所有的js文件；</li>
-<li><code>{}</code> -匹配多个属性，例如<code>&quot;src/{a,b}.js&quot;</code>匹配src目录下的a.js和b.js,<code>src/*.{jpg,png,gif}</code>-表示匹配src下所有的jpg，png，gif的图片文件；</li>
-<li><code>!</code> 排除文件</li>
-</ul>
-<p><code>options</code>可以选参数，有三个默认值，buffer,read,base;<br>其中option.base表示可予以保留的文件路径。</p>
-<p>例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">gulp.src(<span class="string">"src/&#123;a,b&#125;/*.js"</span>); // 匹配src中a,b两个子文件夹下的js文件</div><div class="line"></div><div class="line">gulp.task(<span class="string">"myTask"</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	<span class="built_in">return</span> gulp.src(<span class="string">"./src/**/*.js"</span>,&#123;base:<span class="string">"./src/"</span>&#125;)</div><div class="line">				.pipe(uglify())</div><div class="line">				.pipe(gulp.dest(<span class="string">"./build/"</span>))</div><div class="line">			// 此处会把 src/user/a.js 输出到 build/user/a.js</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h5 id="2-3-gulp-dest-path-option"><a href="#2-3-gulp-dest-path-option" class="headerlink" title="2.3 gulp.dest(path[,option])"></a>2.3 gulp.dest(path[,option])</h5><p>指定处理完后文件输出的路径；</p>
-<ul>
-<li><code>path</code> 必填，输出路径。</li>
-<li><code>option</code> 可选参数，Object，有两个属性cwd，mode;都是string类型，cwd在相对路径中用到，而mode指定创建文件夹的权限。</li>
-</ul>
-<h5 id="2-4-gulp-watch-globs-opts-task-，或者-gulp-watch-globs-opts-cb"><a href="#2-4-gulp-watch-globs-opts-task-，或者-gulp-watch-globs-opts-cb" class="headerlink" title="2.4 gulp.watch(globs[,opts],task)，或者 gulp.watch(globs[,opts,cb])"></a>2.4 gulp.watch(globs[,opts],task)，或者 gulp.watch(globs[,opts,cb])</h5><p>监听指定文件的变化，然后执行相关任务</p>
-<ul>
-<li><code>globs</code> 指定监听文件的路径</li>
-<li><code>opts</code> 可选，具体可以参考<a href="https://github.com/shama/gaze" target="_blank" rel="external">https://github.com/shama/gaze</a></li>
-<li><code>task</code> 监听到变化的时候执行的任务</li>
-<li><code>cb</code> 可选，类型 <strong>function</strong> ，每个文件变化执行的回调函数</li>
-</ul>
-<p>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">'watch-less'</span>, <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line"> gulp.watch(<span class="string">'./src/**/*.less'</span>,<span class="keyword">function</span>(event)&#123;</div><div class="line">   console.log(<span class="string">'less event'</span>+event.type+<span class="string">' '</span>+event.path)</div><div class="line"> &#125;); </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<hr>
-<blockquote>
-<p>gulp只需掌握这四个简单的API就够了，剩下的就是要根据我们的项目需要，配合插件来实现我们的项目工程化。</p>
-</blockquote>
-]]></content>
+    <content type="html"><![CDATA[<hr><blockquote><p> gulp是一种前端代码构建工具，可以帮助我们完成javascript/sass/coffee/less/html/css等文件进行测试、检查、合并、压缩、格式化、浏览器自动刷新、部署文件生成，并监听文件在改动后重复指定的这些步骤。</p></blockquote><h4 id="1-安装gulp"><a href="#1-安装gulp" class="headerlink" title="1.安装gulp"></a>1.安装gulp</h4><p>gulp是基于node的自动任务运作器，所以我们首先需要安装node，可以去<a href="https://nodejs.org" target="_blank" rel="external">node官网</a>进行下载。安装完成后全局安装gulp。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --global gulp</div></pre></td></tr></table></figure><p>全局安装后，再把安装到项目依赖中。全局安装是为了可以使用gulp的命令，而安装到项目依赖则是为了方便文件引入。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev gulp</div></pre></td></tr></table></figure></p><p>然后在项目根目录下简历gulpfile.js的配置文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var gulp = require(<span class="string">"gulp"</span>);</div><div class="line"></div><div class="line">gulp.task(<span class="string">"default"</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">// 此处添加你的默认任务</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p><p>最后，运行gulp任务。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gulp</div></pre></td></tr></table></figure></p><p><strong>如果要执行单个的任务，只需要输入<code>gulp &lt;task&gt; &lt;othertask&gt;</code>。</strong></p><h4 id="2-gulp-API"><a href="#2-gulp-API" class="headerlink" title="2.gulp API"></a>2.gulp API</h4><blockquote><p><code>gulp</code>借鉴了Unix操作系统中管道（pipe）的思想，前一级的输入，直接在后一级输出。<code>gulp</code>本身只提供了四个简洁的接口，许多功能则是借助插件来实现。</p></blockquote><h5 id="2-1-gulp-task-name-deps-fn"><a href="#2-1-gulp-task-name-deps-fn" class="headerlink" title="2.1 gulp.task(name[,deps],fn)"></a>2.1 gulp.task(name[,deps],fn)</h5><p><code>gulp</code>是基于task来进行的。</p><ul><li>name:任务的名称，必填。</li><li>deps:该任务的前置任务，也就是该任务的依赖，必须在依赖的任务执行完毕，才会执行本任务。</li><li>fn:任务的回调函数。</li></ul><p>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">"defaulttask"</span>,<span class="string">"depsTask"</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">console.log(<span class="string">"this is a Task"</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p><h5 id="2-2-gulp-src-globs-options"><a href="#2-2-gulp-src-globs-options" class="headerlink" title="2.2 gulp.src(globs[,options])"></a>2.2 gulp.src(globs[,options])</h5><p><code>globs</code> 是匹配文件，可以是一个string或者数组，其匹配的规则如下：</p><ul><li><code>src/test.js</code> -匹配制定的文件；</li><li><code>*</code> -匹配所有文件，例如<code>&quot;src/*.js&quot;</code>表示匹配src目录下所有的js文件；</li><li><code>**</code> -匹配子文件夹，例如<code>&quot;src/**/*.js&quot;</code>表示匹配src所有子目录下中所有的js文件；</li><li><code>{}</code> -匹配多个属性，例如<code>&quot;src/{a,b}.js&quot;</code>匹配src目录下的a.js和b.js,<code>src/*.{jpg,png,gif}</code>-表示匹配src下所有的jpg，png，gif的图片文件；</li><li><code>!</code> 排除文件</li></ul><p><code>options</code>可以选参数，有三个默认值，buffer,read,base;<br>其中option.base表示可予以保留的文件路径。</p><p>例如：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">gulp.src(<span class="string">"src/&#123;a,b&#125;/*.js"</span>); // 匹配src中a,b两个子文件夹下的js文件</div><div class="line">gulp.task(<span class="string">"myTask"</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line"><span class="built_in">return</span> gulp.src(<span class="string">"./src/**/*.js"</span>,&#123;base:<span class="string">"./src/"</span>&#125;)</div><div class="line">.pipe(uglify())</div><div class="line">.pipe(gulp.dest(<span class="string">"./build/"</span>))</div><div class="line">// 此处会把 src/user/a.js 输出到 build/user/a.js</div><div class="line">&#125;)</div></pre></td></tr></table></figure><h5 id="2-3-gulp-dest-path-option"><a href="#2-3-gulp-dest-path-option" class="headerlink" title="2.3 gulp.dest(path[,option])"></a>2.3 gulp.dest(path[,option])</h5><p>指定处理完后文件输出的路径；</p><ul><li><code>path</code> 必填，输出路径。</li><li><code>option</code> 可选参数，Object，有两个属性cwd，mode;都是string类型，cwd在相对路径中用到，而mode指定创建文件夹的权限。</li></ul><h5 id="2-4-gulp-watch-globs-opts-task-，或者-gulp-watch-globs-opts-cb"><a href="#2-4-gulp-watch-globs-opts-task-，或者-gulp-watch-globs-opts-cb" class="headerlink" title="2.4 gulp.watch(globs[,opts],task)，或者 gulp.watch(globs[,opts,cb])"></a>2.4 gulp.watch(globs[,opts],task)，或者 gulp.watch(globs[,opts,cb])</h5><p>监听指定文件的变化，然后执行相关任务</p><ul><li><code>globs</code> 指定监听文件的路径</li><li><code>opts</code> 可选，具体可以参考<a href="https://github.com/shama/gaze" target="_blank" rel="external">https://github.com/shama/gaze</a></li><li><code>task</code> 监听到变化的时候执行的任务</li><li><code>cb</code> 可选，类型 <strong>function</strong> ，每个文件变化执行的回调函数</li></ul><p>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">'watch-less'</span>, <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line"> gulp.watch(<span class="string">'./src/**/*.less'</span>,<span class="keyword">function</span>(event)&#123;</div><div class="line">   console.log(<span class="string">'less event'</span>+event.type+<span class="string">' '</span>+event.path)</div><div class="line"> &#125;); </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p><hr><blockquote><p>gulp只需掌握这四个简单的API就够了，剩下的就是要根据我们的项目需要，配合插件来实现我们的项目工程化。</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -290,7 +115,7 @@
     
     </summary>
     
-      <category term="前端" scheme="http://leywis.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="学习笔记" scheme="http://leywis.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
       <category term="gulp" scheme="http://leywis.github.io/tags/gulp/"/>
@@ -304,22 +129,16 @@
     <link href="http://leywis.github.io/2017/08/05/hello-world/"/>
     <id>http://leywis.github.io/2017/08/05/hello-world/</id>
     <published>2017-08-05T11:06:03.744Z</published>
-    <updated>2017-08-13T04:48:27.725Z</updated>
+    <updated>2017-10-03T11:23:43.671Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
     
     </summary>
     
